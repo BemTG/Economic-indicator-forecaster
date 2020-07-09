@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width-device-width, intial_scale=1">
+<link rel="stylesheet"  href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awsome.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-animate-left" style="display:none;z-index:5" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+ <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/" class="w3-bar-item w3-button">Introduction </a>
+  <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/cli" class="w3-bar-item w3-button">CLI Forecaster </a>
+  <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/bci" class="w3-bar-item w3-button">BCI Forecaster</a>
+  <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/cci" class="w3-bar-item w3-button">CCI Forecaster</a>
+  <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/spx" class="w3-bar-item w3-button">SP500 Forecaster</a>
+</div>
+
+<!-- Page Content -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+<div>
+  <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>The Consumer confidence index(CCI)</h1>
+
+     <p><strong>The CCI</strong>
+    	<ul>
+  <li>The consumer confidence index aims to track developments in households</li>
+  <li>The main focus of the CCI is consumer consumption and savings, other factors such as households spending power and financial health is also accounted for.</li>
+  
+  <li>Many Economist believe that the CCI is a lagging indicator and mainly use it to confirm trends in the general economy. Since consumers accounts for a big portion of the Global GDP it is an important indicator for where the economy is at for the moment.</li>
+  <li>The CCI is used by many individuals including manufacturers, retailers, banks and the government to aid them when making business decisions. For example, if the index rises by 10% then manufacturers may increase production accordingly to meet the anticipated consumer demand.</li>
+</ul></p>
+
+
+<p><strong>What are we actually looking at?</strong>
+    	<ul>
+  <li>What we are looking at is an aggregate of economic information from 37 countries.
+  </li>
+
+  <li>Around 40% of the CCI comprises of consumer opinions on current economic condition and 60% on consumer expectation of future economic conditions.</li>
+
+  <li>Some of the CCI survey questions include: current business condition, business condition for next 6 months, current employment condition, employment condition for the next 6 months, total family income for next 6 months...etc.
+  </li></ul></p>
+
+
+
+<p><strong>How do we use the CLI?</strong>
+<ul>
+  <li>When the CCI is above 100 it indicates a boost in consumer confidence towards the future economy, hence they are more likely to spend more and save less (consumers tend to do major purchases within 12 months).</li>
+<li>When CCI is below 100 consumers are more pessimistic towards future developments, as a result consumers will save more and consume less.</li></ul>
+</p>
+
+
+
+  </div>
+</div>
+     
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+          
+</body>
+</html>
+
+
+
+
+
+<style>
+	body,h1 {font-family: 'Raleway', Arial, sans-serif}
+	h1 {letter-spacing: 6px}
+	.w3-row-padding img {margin-bottom: 12px}
+</style>
+
+<body>
+
+<!--!PAGE CONTENT! -->
+<div class="w3-content" style='max-width: 1500px'>
+
+	<!--Header -->
+	<header class="w3-panel w3-centre" style='padding: 5px 5px'>
+		<h1 class ='w3-xlarge'>  Forecasting the Consumer Confidence Index(CCI)</h1>
+	</header>
+
+	<div class='w3-row-padding w3-grayscale' style='margin-bottom: 20px'>
+
+		<div align="centre">
+			<!--calling the GetForecast function-->
+			<form id='submit_params' method='POST' action="{{ url_for('GetForecast3') }}">
+
+				<label>How many months out into the future?</label>
+				<br>
+				<!--dropdown menu-->
+				<SELECT class='selectpicker' name='months_out3' style='width:250px;'>
+					<option value="{{default_months_out3}}" selected>{{default_months_out3}}</option>'>
+					<!--loop through 1-50 and insert in the drop down menu-->
+					{% for mo2 in range (1,13) %}
+						<option value="{{mo2}}">{{mo2}}</option>
+					{% endfor %}
+				</SELECT>
+
+				<!--notice that the button is inside the form tag-->
+				<button class="btn btn-default" type="submit">Get Your Forecast</button>
+			</form>
+
+		</div>
+
+			<div align="centre">
+				<!--show the image-->
+				{{forecast_plot3}}
+			</div>
+
+			<div align="centre">
+				<!--show the image-->
+				{{forecast_plot6}}
+			</div>
+			
+
+			</div>
+
+		</div>
+
+
+				</SELECT>
+
+</body>
+</html>
+
+
+<div class="footer">
+  <p>© 2019-2020 Quantlog-technologies.com - Premium quantitative strategies, forecasting & tracking  services.
+</p>
+</div>

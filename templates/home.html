@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width-device-width, intial_scale=1">
+<link rel="stylesheet"  href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awsome.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-animate-left" style="display:none;z-index:5" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+ <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/" class="w3-bar-item w3-button">Introduction </a>
+  <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/cli" class="w3-bar-item w3-button">CLI Forecaster </a>
+  <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/bci" class="w3-bar-item w3-button">BCI Forecaster</a>
+  <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/cci" class="w3-bar-item w3-button">CCI Forecaster</a>
+  <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/spx" class="w3-bar-item w3-button">SP500 Forecaster</a>
+</div>
+
+<!-- Page Content -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+<div>
+  <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>Economic market indicators</h1>
+    <strong> What is the business cycle?</strong>
+    <p>The business cycle is something that is inherent characteristic of developed economies and it consist of periods of rapid economic growth and slowdowns. In severe periods of market contraction, the economy can enter a recession, meaning it experiences negative growth and shrinks. Recessions can cause consumers to be less confident about the future, which tends to lead to less spending and lower revenues for businesses.<br><br>
+    <strong> How do Economic indicators help us?</strong>
+    <p>Economists and business experts aggregate economic data into simple indicators in order to keep track of the economie's health. These economic indicators can include recent employment numbers, leading business managers sentiments, growth of stock markets, inventory and order book of major businesses and other economic data. <br> There are mainly two types of indicators, leading indicators and lagging indicators. Leading indicators are indicators that tend to move in advance of the state of the economy, whereas lagging indicators move much slower showing a consolidated view of the economy. <br>  </p>
+    <strong> Which economic global reports are being used?</strong>
+    <p>The organization for economic co-operation and development (OECD) is an international economic organisation which comprises of 37 countries. All members of the organisation are commityed to the market economy and thereby use the platform to share and compare economic policy experiences and seek answers to common problems.
+    For this project we have chosen to go with OECD reports as the OECD members collectively represent around 60% of Global GDP yearly.
+    There are around 170 OECD reports that go into one economic indicator; each member will contribute 5-10 reports monthly.
+    <br></p>
+
+
+     </p>
+
+
+     </p>
+    <p></p>
+  </div>
+</div>
+     
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+<style>
+  body,h1 {font-family: 'Raleway', Arial, sans-serif}
+  h1 {letter-spacing: 6px}
+  .w3-row-padding img {margin-bottom: 12px}
+</style>
+
+<body>
+          
+</body>
+
+</html>
+
+
+  
+
+</div>
+<br>
+
+<div class="w3-container">
+    <h1></h1>
+    <strong> What is the forecasting model used?</strong>
+    <p>The forecasting model used is a artificial neural network(ANN) Sequential model which is a type of machine learning.<br>
+
+ 
+
+    <div class="w3-container w3-center">
+    <img src="https://icdn6.digitaltrends.com/image/digitaltrends/artificial_neural_network_1-791x388.jpg" style="width:120%;max-width:420px">
+  </div>
+  <br><br>
+
+
+    The economic data is passed and processed by the neural network which spot cyclical and seasonal patterns in the dataset.<br>
+
+
+    This is maily done by the nodes in the nework which find patterns and report their findings to the following nodes in the next layer. This process repeats several times whilst giving more significance to specific neural network passages that are most effective in capturing the market state in the dataset.<br>
+
+    One key feature of machine learning is that the user does not neccessarly need to specify what patterns to look for, the algorythm learns on its own.
+
+
+    <div align="centre" >
+        <!--show the image-->
+        {{forecast_plot0}}
+      </div>
+
+    <br>
+
+    The model test validation results are seen above and as you can see it is decent bearing in mind that the model was trained on a local CPU for no longer than 10 mins. However, there is certainly room for improvement as the model tends to slighly overshoot on the downside when there is no market slowdown.<br><br>
+
+    For more information on how the model is trained and the  source code for this project visit the
+    <a href="https://github.com/BemTG/Economic-indicator-forecaster">Github </a>link .
+
+
+     </p>
+  <div class="w3-container w3-center">
+  <img src="https://s3.amazonaws.com/humoresque/wp-content/uploads/2016/05/04210608/MonkeyBiz_CLR.jpg" alt="car" style="width:80%;max-width:320px">
+</div>
+
+     </p>
+    <p></p>
+  </div>
+<br><br>
+
+<div class="footer">
+  <p>© 2019-2020 Quantlog-technologies.com - Premium quantitative strategies, forecasting & tracking  services.
+</p>
+</div>

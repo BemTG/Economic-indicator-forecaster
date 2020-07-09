@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width-device-width, intial_scale=1">
+<link rel="stylesheet"  href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awsome.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-animate-left" style="display:none;z-index:5" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+ <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/" class="w3-bar-item w3-button">Introduction </a>
+  <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/cli" class="w3-bar-item w3-button">CLI Forecaster </a>
+  <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/bci" class="w3-bar-item w3-button">BCI Forecaster</a>
+  <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/cci" class="w3-bar-item w3-button">CCI Forecaster</a>
+  <a href="http://economyforecastergamma-env.eba-3tgc3nmv.eu-west-2.elasticbeanstalk.com/spx" class="w3-bar-item w3-button">SP500 Forecaster</a>
+</div>
+
+<!-- Page Content -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+<div>
+  <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>The Composite Leading Indicator(CLI)</h1>
+
+
+
+    <p><strong>The CLI</strong>
+    	<ul>
+  <li>The Composite Leading Indicator (CLI) is designed to provide early signals of turning points in business cycles. It is believed by some economist that the CLI can infer the future economy in advance of the business cycle by 6-9 months.</li>
+  <li>The indicator is mainly used by businesses and investors to help plan their activities around the expected performance of the economy and protect themselves from economic downturns.</li>
+  <li>It is important to realise that CLI figures are gathered qualitatively but aggregated and presented quantitatively.
+  New figures for the CLI are published every month</li>
+</ul></p>
+
+
+<p><strong>What are we actually looking at?</strong>
+    	<ul>
+  <li>What we are looking at is an aggregate of economic information from 37 countries.
+  </li>
+
+  <li>Some of the short term indicators aggregated include: Business Confidence surveys, Orders, Inventory numbers, share prices of individual stock market indexes and businesses etc
+  </li></ul></p>
+
+
+
+<p><strong>How do we use the CLI?</strong>
+<ul>
+  <li>When the CLI is above the 100 line that means the economy is expanding whereas when it is below tje 100 the economy is contracting.</li></ul>
+</p>
+
+    
+
+  </div>
+</div>
+
+</div>
+     
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+          
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+	body,h1 {font-family: 'Raleway', Arial, sans-serif}
+	h1 {letter-spacing: 6px}
+	.w3-row-padding img {margin-bottom: 12px}
+</style>
+
+<body>
+
+<!--!PAGE CONTENT! -->
+<div class="w3-content" style='max-width: 1500px'>
+
+	<!--Header -->
+	<header class="w3-panel w3-centre" style='padding: 5px 5px'>
+		<h1 class ='w3-xlarge'>Forecasting the Composite Leading Indicator(CLI)</h1>
+	</header>
+
+	<div class='w3-row-padding w3-grayscale' style='margin-bottom: 20px'>
+
+		<div align="centre">
+			<!--calling the GetForecast function-->
+			<form id='submit_params' method='POST' action="{{ url_for('GetForecast') }}">
+
+				<label><strong>How many months out into the future?</strong></label>
+				<br>
+				<!--dropdown menu-->
+				<SELECT class='selectpicker' name='months_out' style='width:250px;'>
+					<option value="{{default_months_out}}" selected>{{default_months_out}}</option>'>
+					<!--loop through 1-50 and insert in the drop down menu-->
+					{% for mo in range (1,13) %}
+						<option value="{{mo}}">{{mo}}</option>
+					{% endfor %}
+				</SELECT>
+
+				<!--notice that the button is inside the form tag-->
+				<button class="btn btn-default" type="submit">Get Your Forecast</button>
+			</form>
+
+		</div>
+
+			<div align="centre">
+				<!--show the image-->
+				{{forecast_plot}}
+			</div>
+
+	<header class="w3-panel w3-centre" style='padding: 5px 5px'>
+		<h1 class ='w3-xlarge'>  </h1>
+	</header>
+
+			<div align="centre">
+				<!--show the image-->
+				{{forecast_comparison1}}
+			</div>
+			
+
+			</div>
+
+		</div>
+
+
+				</SELECT>
+
+
+</body>
+</html>
+
+<div class="footer">
+  <p>© 2019-2020 Quantlog-technologies.com - Premium quantitative strategies, forecasting & tracking  services.
+</p>
+</div>
